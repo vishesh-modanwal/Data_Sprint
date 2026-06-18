@@ -1,0 +1,40 @@
+
+Spotify Genre Classification – Project Report
+
+1. Objective
+The objective of this project is to build a robust machine learning model that can accurately predict the genre of a song (track_genre) based on various features such as audio characteristics, popularity, and metadata.
+
+The key challenge is handling:
+- Multi-class classification (many genres)
+- Complex categorical data (artists, albums)
+- Avoiding overfitting while maintaining high accuracy
+
+2. Dataset Understanding
+The dataset consists of track information, audio features, musical attributes, and the target variable track_genre.
+
+3. Data Preprocessing
+Duplicate records were removed, unnecessary columns dropped, and missing values handled using median for numerical data and 'unknown' for categorical data.
+
+4. Exploratory Data Analysis (EDA)
+EDA was performed to understand feature distributions and relationships using plots like histograms and heatmaps.
+
+5. Feature Engineering
+Artists were processed by extracting number of artists and main artist. Frequency encoding was applied to artists and album_name.
+
+6. Model Selection
+LightGBM and XGBoost were selected as they perform well on tabular data and do not require scaling.
+
+7. Ensemble Strategy
+Final Prediction = 0.6 * LightGBM + 0.4 * XGBoost
+
+8. Model Evaluation
+Evaluation metrics used include Accuracy, F1 Score, and Precision. Stratified cross-validation ensured stable performance.
+
+9. Visualization
+Confusion matrix and feature distribution plots were used for explainability.
+
+10. Final Prediction
+The model predicts genres for test data and results are saved in submission.csv.
+
+11. Conclusion
+The project demonstrates a complete ML pipeline with strong feature engineering and ensemble modeling.
